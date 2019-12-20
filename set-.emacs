@@ -153,5 +153,14 @@
 (helm-mode 1)
 (define-key global-map (kbd "M-x")     'helm-M-x)
 (define-key global-map (kbd "C-x C-f") 'helm-find-files)
-(define-key helm-read-file-map (kbd "TAB") 'helm-execute-persistent-action)
-(define-key helm-read-file-map (kbd "TAB") 'helm-execute-persistent-action)
+(define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action)
+(define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action)
+
+;; tab 補完時に後方からの検索が可能になっている
+;; (ctrl-x,ctrl-f),(ctrl-x,ctrl-b) などのディレクトリ検索時に使用可能
+(ido-mode t)
+
+;;Open Emacs/shell directory in shell/Emacs
+(require 'server)
+(unless (server-running-p)
+  (server-start))
