@@ -149,6 +149,7 @@
 (add-hook 'after-save-hook 'executable-make-buffer-file-executable-if-script-p)
 
 ;; helm の簡易設定
+(require 'helm-lib)
 (require 'helm-config)
 (helm-mode 1)
 (define-key global-map (kbd "M-x")     'helm-M-x)
