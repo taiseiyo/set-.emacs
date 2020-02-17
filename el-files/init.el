@@ -11,6 +11,3 @@
       '(("gnu" . "http://elpa.gnu.org/packages/")
         ("melpa" . "https://stable.melpa.org/packages/")
         ("org" . "http://orgmode.org/elpa/archive-contents/")))
-
-(add-hook 'python-mode-hook 'jedi:setup)
-(setq jedi:complete-on-dot t)
