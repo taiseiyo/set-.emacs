@@ -165,3 +165,20 @@
 (require 'server)
 (unless (server-running-p)
   (server-start))
+
+;;org-table mode を楽にする
+(require 'org-eldoc)
+
+(defadvice org-eldoc-documentation-function (around add-field-info activate)
+  (or
+   (ignore-errors (and (not (org-at-table-hline-p)) (org-table-field-info nil)))
+   ad-do-it))
+
+(add-hook 'org-mode-hook 'eldoc-mode)
+
+(eldoc-add-command-completions
+ "org-table-next-" "org-table-previous" "org-cycle")
+
+;;emacs 上での jedi の python mode の設定
+(add-hook 'python-mode-hook 'jedi:setup)
+(setq jedi:complete-on-dot t)
