@@ -203,6 +203,6 @@
                '(lambda () (flyspell-mode 1))))
  '(
    ;; ここに書いたモードではflyspell-mode が有効になる
-     yatex-mode-hook
+     latex-mode-hook
      org-mode-hook
      ))
