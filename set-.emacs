@@ -49,7 +49,6 @@
 			:weight (or (nth 3 elem) 'normal))))
 
 
-;;(setq load-path (cons "~/.emacs.d/inits/migemo.el" load-path))
 
 ;;()を対応させる設定
 (electric-pair-mode 1)
@@ -127,7 +126,6 @@
 (setq mew-delete-unread-mark-by-mark nil)
 ;;mewのIMAP passward 飛す
 (setq mew-use-cached-passwd t)
-
 ;; ~fileがでないようにする設定
 (setq make-backup-files nil)
 
@@ -182,3 +180,29 @@
 ;;emacs 上での jedi の python mode の設定
 (add-hook 'python-mode-hook 'jedi:setup)
 (setq jedi:complete-on-dot t)
+
+;;emacs での自動スペルチェック
+;;sudo apt-get install aspell aspell-en
+;;echo lang en_US > ~/.aspell.conf
+
+(setq-default ispell-program-name "aspell")
+(eval-after-load "ispell"
+'(add-to-list 'ispell-skip-region-alist '("[^\000-\377]+")))
+
+(mapc                                   ;; 以下flyspell-modeの設定
+ (lambda (hook)
+   (add-hook hook 'flyspell-prog-mode))
+ '(
+   ;; ここに書いたモードではコメント領域のところだけflyspell-mode が有効になる
+   python-mode
+   emacs-lisp-mode-hook
+   ))
+(mapc
+ (lambda (hook)
+     (add-hook hook
+               '(lambda () (flyspell-mode 1))))
+ '(
+   ;; ここに書いたモードではflyspell-mode が有効になる
+     yatex-mode-hook
+     org-mode-hook
+     ))
