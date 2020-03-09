@@ -206,3 +206,9 @@
      latex-mode-hook
      org-mode-hook
      ))
+
+;;akio mode
+(require 'akio)
+(require 'wise-compile)
+
+;; (load "akio")
