@@ -10,9 +10,12 @@
 		      (substring (buffer-file-name) -3))
 	(compile (concat "bash "
 			 (message (buffer-file-name))))
-      (message "Not compatible with this mode")
+      (if (string-equal ".el"
+		      (substring (buffer-file-name) -3))
+	  (byte-compile-file (file-name-nondirectory (buffer-file-name)))
+	(message "Not compatible with this mode")
+	)
       )
     )
   )
-
 (provide 'wise-compile)
