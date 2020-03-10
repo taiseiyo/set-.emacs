@@ -13,8 +13,8 @@
 		      (substring pro_name -3))
 	(compile (concat "bash " pro_name))
       (if (string-equal ".el"
-		      (substring (pro_name) -3))
-	  (byte-compile-file (file-name-nondirectory (pro_name)))
+		      (substring pro_name -3))
+	  (byte-compile-file (file-name-nondirectory (buffer-file-name)))
 	(message "Not compatible with this mode")
 	)
       )
