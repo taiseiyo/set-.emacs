@@ -210,8 +210,20 @@
 ;;akio mode
 (require 'akio)
 (require 'wise-compile)
+(require 'pman)
+(global-set-key "\C-xp" 'pman)
+;; emacs lisp を書く時の設定
 (require 'hl-defined)
 (add-hook 'emacs-lisp-mode-hook 'hdefd-highlight-mode nil)
 ;; (load "akio")
 ;; エンターキーを押した時に改行をいれない
 (setq skk-egg-like-newline t)
+;;web-mode 設定
+(require 'web-mode)
+(add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.css?\\'" . web-mode))
+
+(setq web-mode-enable-auto-closing t
+      web-mode-enable-auto-pairing t
+      web-mode-markup-indent-offset 2
+      web-mode-css-indent-offset 2)
