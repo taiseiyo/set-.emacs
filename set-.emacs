@@ -154,7 +154,6 @@
 (define-key global-map (kbd "C-x C-f") 'helm-find-files)
 (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action)
 (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action)
-
 ;; tab 補完時に後方からの検索が可能になっている
 ;; (ctrl-x,ctrl-f),(ctrl-x,ctrl-b) などのディレクトリ検索時に使用可能
 (ido-mode t)
@@ -227,3 +226,6 @@
       web-mode-enable-auto-pairing t
       web-mode-markup-indent-offset 2
       web-mode-css-indent-offset 2)
+
+;; org-mode で presentation を行う時の設定 
+(autoload 'org-present "org-present" nil t)
