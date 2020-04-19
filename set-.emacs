@@ -217,15 +217,21 @@
 ;; (load "akio")
 ;; エンターキーを押した時に改行をいれない
 (setq skk-egg-like-newline t)
-;;web-mode 設定
-(require 'web-mode)
-(add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.css?\\'" . web-mode))
 
-(setq web-mode-enable-auto-closing t
-      web-mode-enable-auto-pairing t
-      web-mode-markup-indent-offset 2
-      web-mode-css-indent-offset 2)
+;;web-mode 設定
+;; (require 'web-mode)
+;; (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+;; (add-to-list 'auto-mode-alist '("\\.css?\\'" . web-mode))
+
+;; (setq web-mode-enable-auto-closing t
+;;       web-mode-enable-auto-pairing t
+;;       web-mode-markup-indent-offset 2
+;;       web-mode-css-indent-offset 2)
 
 ;; org-mode で presentation を行う時の設定 
 (autoload 'org-present "org-present" nil t)
+;; html-modeとかで自動出来にzencodingできるようにする
+(require 'zencoding-mode)
+(add-to-list 'auto-mode-alist '("\\.html?\\'" . zencoding-mode))
+(add-to-list 'auto-mode-alist '("\\.css?\\'" . zencoding-mode))
+(add-hook 'sgml-mode-hook 'zencoding-mode) 
