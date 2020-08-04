@@ -10,7 +10,6 @@
 ;; You may delete these explanatory comments.
 (setq load-path(append '("~/.emacs.d/lisp/") load-path))
 
-(package-initialize)
 
 (keyboard-translate ?\C-h ?\C-?)
 
@@ -67,7 +66,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (helm exec-path-from-shell undo-tree package-utils auto-complete))))
+    (multiple-cursors helm exec-path-from-shell undo-tree package-utils auto-complete))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -206,32 +205,23 @@
      org-mode-hook
      ))
 
-;;akio mode
-(require 'akio)
 (require 'wise-compile)
+(require 'birthday-card)
+(require 'birthday-animation)
 (require 'pman)
+
 (global-set-key "\C-xp" 'pman)
 ;; emacs lisp を書く時の設定
 (require 'hl-defined)
 (add-hook 'emacs-lisp-mode-hook 'hdefd-highlight-mode nil)
-;; (load "akio")
 ;; エンターキーを押した時に改行をいれない
 (setq skk-egg-like-newline t)
 
-;;web-mode 設定
-;; (require 'web-mode)
-;; (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
-;; (add-to-list 'auto-mode-alist '("\\.css?\\'" . web-mode))
-
-;; (setq web-mode-enable-auto-closing t
-;;       web-mode-enable-auto-pairing t
-;;       web-mode-markup-indent-offset 2
-;;       web-mode-css-indent-offset 2)
 
 ;; org-mode で presentation を行う時の設定 
-(autoload 'org-present "org-present" nil t)
-;; html-modeとかで自動出来にzencodingできるようにする
-(require 'zencoding-mode)
-(add-to-list 'auto-mode-alist '("\\.html?\\'" . zencoding-mode))
-(add-to-list 'auto-mode-alist '("\\.css?\\'" . zencoding-mode))
-(add-hook 'sgml-mode-hook 'zencoding-mode) 
+;; (autoload 'org-present "org-present" nil t)
+
+;; html,cssで使いやすいようにする設定: emmet
+(require 'emmet-mode)
+(add-hook 'sgml-mode-hook 'emmet-mode) ;; Auto-start on any markup modes
+(add-hook 'css-mode-hook  'emmet-mode) ;; enable Emmet's css abbreviation.
