@@ -6,8 +6,12 @@
 (setq show-paren-style 'parenthesis) 
 
 ;;追加のパッケージを登録
-(package-initialize)
 (setq package-archives
       '(("gnu" . "http://elpa.gnu.org/packages/")
-        ("melpa" . "https://stable.melpa.org/packages/")
         ("org" . "http://orgmode.org/elpa/archive-contents/")))
+
+(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
+;; (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/archive-contents/"))
+
+(package-initialize)
+
