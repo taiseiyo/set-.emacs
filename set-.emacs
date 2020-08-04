@@ -66,7 +66,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (multiple-cursors helm exec-path-from-shell undo-tree package-utils auto-complete))))
+    (js-auto-format-mode multiple-cursors helm exec-path-from-shell undo-tree package-utils auto-complete))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -225,3 +225,7 @@
 (require 'emmet-mode)
 (add-hook 'sgml-mode-hook 'emmet-mode) ;; Auto-start on any markup modes
 (add-hook 'css-mode-hook  'emmet-mode) ;; enable Emmet's css abbreviation.
+
+;; javascript で使いやすいようにする設定
+;; M-x package-install RET js-auto-format-mode RET
+(add-hook 'js-mode-hook #'js-auto-format-mode)
