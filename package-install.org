@@ -1,7 +1,7 @@
 - jedi
 - (multiple-cursors)
 - tern 
-  - tern-config 
+  - ~/.tern-config 
 #+BEGIN_SRC
 {
     "libs": [
