@@ -1,3 +1,6 @@
+- jedi
+- (multiple-cursors)
+- tern 
+- tern-auto-complete
+- prettier-js
 
-jedi
-multiple-cursors

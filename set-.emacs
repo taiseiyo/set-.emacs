@@ -51,28 +51,28 @@
 
 ;;()を対応させる設定
 (electric-pair-mode 1)
-;;~/.emacs.d/init.elを読み込む設定
+;;~/.emacs.d/init.el を読み込む設定
 (load (expand-file-name (concat (getenv "HOME") "/.emacs.d/init")))
 
-;;auto-completeを読み込む設定
+;;auto-complete を読み込む設定
 (require 'auto-complete)
 (require 'auto-complete-config)
-;;デフォルトでauto-completeを有効にする
+;;デフォルトで auto-complete を有効にする
 (global-auto-complete-mode t)
-(custom-set-variables
+;; (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages
-   (quote
-    (js-auto-format-mode multiple-cursors helm exec-path-from-shell undo-tree package-utils auto-complete))))
-(custom-set-faces
+;;  '(package-selected-packages
+;;    (quote
+;;     (prettier-js add-node-modules-path migemo undo-tree package-utils multiple-cursors js-format js-auto-format-mode jedi helm exec-path-from-shell company-jedi))))
+;; (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ ;; )
 
 ;; latex の変数
 (setq org-latex-pdf-process
@@ -94,19 +94,19 @@
      )
   )
 
-;;utf-8の設定
+;;utf-8 の設定
 (prefer-coding-system 'utf-8)
 ;; (setq coding-system-for-write 'utf-8)
 ;; (put 'upcase-region 'disabled nil)
 
-;;undo-treeの設定
+;;undo-tree の設定
 (when (require 'undo-tree nil t)
   (global-undo-tree-mode))
 
 ;;package-install の鍵設定(gnu)
 (setq package-check-signature nil)
 
-;;flylintの設定
+;;flylint の設定
 (autoload 'flylint-mode "flylint" nil t)
 (add-hook 'python-mode-hook
 	  '(lambda ()
@@ -123,16 +123,16 @@
 
 ;; mark 消さない
 (setq mew-delete-unread-mark-by-mark nil)
-;;mewのIMAP passward 飛す
+;;mew の IMAP passward 飛す
 (setq mew-use-cached-passwd t)
-;; ~fileがでないようにする設定
+;; ~file がでないようにする設定
 (setq make-backup-files nil)
 
-;; pep8の設定：保存時にバッファ全体を自動整形する
+;; pep8 の設定：保存時にバッファ全体を自動整形する
 (require 'py-autopep8)
 (add-hook 'python-mode-hook 'py-autopep8-enable-on-save)
 
-;; emacs上でPDFの注釈を付ける設定
+;; emacs 上で PDF の注釈を付ける設定
 (setq doc-view-scale-internally nil)
 (add-hook 'doc-view-mode-hook
       '(lambda ()
@@ -187,11 +187,11 @@
 (eval-after-load "ispell"
 '(add-to-list 'ispell-skip-region-alist '("[^\000-\377]+")))
 
-(mapc                                   ;; 以下flyspell-modeの設定
+(mapc                                   ;; 以下 flyspell-mode の設定
  (lambda (hook)
    (add-hook hook 'flyspell-prog-mode))
  '(
-   ;; ここに書いたモードではコメント領域のところだけflyspell-mode が有効になる
+   ;; ここに書いたモードではコメント領域のところだけ flyspell-mode が有効になる
    python-mode
    emacs-lisp-mode-hook
    ))
@@ -200,7 +200,7 @@
      (add-hook hook
                '(lambda () (flyspell-mode 1))))
  '(
-   ;; ここに書いたモードではflyspell-mode が有効になる
+   ;; ここに書いたモードでは flyspell-mode が有効になる
      latex-mode-hook
      org-mode-hook
      ))
@@ -217,15 +217,57 @@
 ;; エンターキーを押した時に改行をいれない
 (setq skk-egg-like-newline t)
 
-
 ;; org-mode で presentation を行う時の設定 
 ;; (autoload 'org-present "org-present" nil t)
 
-;; html,cssで使いやすいようにする設定: emmet
+;; html,css で使いやすいようにする設定: emmet
 (require 'emmet-mode)
 (add-hook 'sgml-mode-hook 'emmet-mode) ;; Auto-start on any markup modes
-(add-hook 'css-mode-hook  'emmet-mode) ;; enable Emmet's css abbreviation.
+(add-hook 'css-mode-hook  'emmet-mode) ;; enable Emmet's css abbreviation
 
-;; javascript で使いやすいようにする設定
-;; M-x package-install RET js-auto-format-mode RET
-(add-hook 'js-mode-hook #'js-auto-format-mode)
+;; javascript の format を整える
+(require 'prettier-js)
+
+(add-hook 'js2-mode-hook 'prettier-js-mode)
+(defun enable-minor-mode (my-pair)
+  "Enable minor mode if filename match the regexp.  MY-PAIR is a cons cell (regexp . minor-mode)."
+  (if (buffer-file-name)
+      (if (string-match (car my-pair) buffer-file-name)
+	  (funcall (cdr my-pair)))))
+(add-hook 'web-mode-hook #'(lambda ()
+                            (enable-minor-mode
+                             '("\\.jsx?\\'" . prettier-js-mode))))
+(setq prettier-js-args '(
+  "--trailing-comma" "all"
+  "--bracket-spacing" "false"
+))
+
+;; 全角と半角の間に自動でスペースを入れる
+;; https://github.com/coldnew/pangu-spacing
+(require 'pangu-spacing)
+(global-pangu-spacing-mode 1)
+(setq pangu-spacing-real-insert-separtor t)
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   (quote
+    (tern-auto-complete tern org-plus-contrib pangu-spacing migemo undo-tree prettier-js package-utils multiple-cursors js-format js-auto-format-mode jedi helm exec-path-from-shell company-jedi add-node-modules-path))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
+(setq js-indent-level 2)
+
+;; package-install -> tern and tern-auto-complete
+;; javascript の関数自動補完パッケージ
+(autoload 'tern-mode "tern.el" nil t)
+(add-hook 'js-mode-hook (lambda () (tern-mode t)))
+(eval-after-load 'tern
+   '(progn
+      (require 'tern-auto-complete)
+      (tern-ac-setup)))
