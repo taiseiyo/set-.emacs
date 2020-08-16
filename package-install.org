@@ -2,6 +2,7 @@
 - (multiple-cursors)
 - tern 
   - tern-config 
+#+BEGIN_SRC
 {
     "libs": [
     "browser",
@@ -17,6 +18,7 @@
     }
   }
 }
+#+END_SRC
 - tern-auto-complete
 - prettier-js
 
