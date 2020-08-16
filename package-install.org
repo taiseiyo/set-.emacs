@@ -1,6 +1,22 @@
 - jedi
 - (multiple-cursors)
 - tern 
+  - tern-config 
+{
+    "libs": [
+    "browser",
+    "jquery"
+  ],
+  "loadEagerly": [
+    "importantfile.js"
+  ],
+  "plugins": {
+    "requirejs": {
+      "baseURL": "./",
+      "paths": {}
+    }
+  }
+}
 - tern-auto-complete
 - prettier-js
 
