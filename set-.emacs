@@ -267,6 +267,7 @@
 ;; javascript の関数自動補完パッケージ
 (autoload 'tern-mode "tern.el" nil t)
 (add-hook 'js-mode-hook (lambda () (tern-mode t)))
+(add-hook 'js-mode-hook (lambda () (prettier-js-mode t)))
 (eval-after-load 'tern
    '(progn
       (require 'tern-auto-complete)
