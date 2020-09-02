@@ -254,7 +254,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (tern-auto-complete tern org-plus-contrib pangu-spacing migemo undo-tree prettier-js package-utils multiple-cursors js-format js-auto-format-mode jedi helm exec-path-from-shell company-jedi add-node-modules-path))))
+    (helm-elscreen elscreen org-preview-html tern-auto-complete tern org-plus-contrib pangu-spacing migemo undo-tree prettier-js package-utils multiple-cursors js-format js-auto-format-mode jedi helm exec-path-from-shell company-jedi add-node-modules-path))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -262,6 +262,8 @@
  ;; If there is more than one, they won't work right.
  )
 (setq js-indent-level 2)
+(setq python-indent-guess-indent-offset t)  
+(setq python-indent-guess-indent-offset-verbose nil)
 
 ;; package-install -> tern and tern-auto-complete
 ;; javascript の関数自動補完パッケージ
@@ -272,3 +274,16 @@
    '(progn
       (require 'tern-auto-complete)
       (tern-ac-setup)))
+
+;;org-preview-mode の設定
+(add-to-list 'load-path
+             (concat user-emacs-directory
+                     (convert-standard-filename "elisp/")))
+
+;; 動的補完
+(setq skk-dcomp-activate t)
+
+;; アノテーション表示
+(setq skk-show-annotation t)
+;; 送り仮名が厳密に正しい候補を優先して表示する
+(setq skk-henkan-strict-okuri-precedence t)

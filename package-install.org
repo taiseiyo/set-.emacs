@@ -21,4 +21,3 @@
 #+END_SRC
 - tern-auto-complete
 - prettier-js
-
