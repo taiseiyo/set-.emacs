@@ -21,3 +21,4 @@
 #+END_SRC
 - tern-auto-complete
 - prettier-js
+- codic -> メソッド名決める時に便利

@@ -254,7 +254,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (helm-elscreen elscreen org-preview-html tern-auto-complete tern org-plus-contrib pangu-spacing migemo undo-tree prettier-js package-utils multiple-cursors js-format js-auto-format-mode jedi helm exec-path-from-shell company-jedi add-node-modules-path))))
+    (codic helm-elscreen elscreen org-preview-html tern-auto-complete tern org-plus-contrib pangu-spacing migemo undo-tree prettier-js package-utils multiple-cursors js-format js-auto-format-mode jedi helm exec-path-from-shell company-jedi add-node-modules-path))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -282,8 +282,12 @@
 
 ;; 動的補完
 (setq skk-dcomp-activate t)
-
 ;; アノテーション表示
 (setq skk-show-annotation t)
 ;; 送り仮名が厳密に正しい候補を優先して表示する
 (setq skk-henkan-strict-okuri-precedence t)
+;; codic の api key の作成
+(setq codic-api-token "O34o0PIozjDzqSLnuU31AxwOF8l1ERb7Lk")
+
+;; (require 'ox-qmd)
+;; (add-to-list 'ox-qmd-language-keyword-alist '("ruby" . "ruby"))
