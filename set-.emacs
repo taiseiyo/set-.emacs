@@ -211,6 +211,7 @@
 (require 'pman)
 
 (global-set-key "\C-xp" 'pman)
+
 ;; emacs lisp を書く時の設定
 (require 'hl-defined)
 (add-hook 'emacs-lisp-mode-hook 'hdefd-highlight-mode nil)
@@ -288,6 +289,8 @@
 (setq skk-henkan-strict-okuri-precedence t)
 ;; codic の api key の作成
 (setq codic-api-token "O34o0PIozjDzqSLnuU31AxwOF8l1ERb7Lk")
+;; codic をグローバル設定にする
+(global-set-key "\C-c\C-o" 'codic-translate)
 
 ;; (require 'ox-qmd)
 ;; (add-to-list 'ox-qmd-language-keyword-alist '("ruby" . "ruby"))
