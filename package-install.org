@@ -22,3 +22,4 @@
 - tern-auto-complete
 - prettier-js
 - codic -> メソッド名決める時に便利
+- autopep8 ->  python 整形
