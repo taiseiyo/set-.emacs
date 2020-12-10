@@ -111,7 +111,7 @@
 (add-hook 'python-mode-hook
 	  '(lambda ()
 	     (flylint-mode 1)))
-(add-hook 'perl-mode-hook
+(add-hook 'sh-mode-hook
 	  '(lambda ()
 	     (flylint-mode 1)))
 (add-hook 'c-mode-hook
@@ -120,6 +120,8 @@
 (add-hook 'emacs-lisp-mode-hook
   	  '(lambda ()
 	     (flylint-mode 1)))
+
+
 
 ;; mark 消さない
 (setq mew-delete-unread-mark-by-mark nil)
@@ -255,7 +257,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (codic helm-elscreen elscreen org-preview-html tern-auto-complete tern org-plus-contrib pangu-spacing migemo undo-tree prettier-js package-utils multiple-cursors js-format js-auto-format-mode jedi helm exec-path-from-shell company-jedi add-node-modules-path))))
+    (rjsx-mode codic helm-elscreen elscreen org-preview-html tern-auto-complete tern org-plus-contrib pangu-spacing migemo undo-tree prettier-js package-utils multiple-cursors js-format js-auto-format-mode jedi helm exec-path-from-shell company-jedi add-node-modules-path))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -294,3 +296,4 @@
 
 ;; (require 'ox-qmd)
 ;; (add-to-list 'ox-qmd-language-keyword-alist '("ruby" . "ruby"))
+(add-to-list 'auto-mode-alist '(".*\\.js\\'" . rjsx-mode))
