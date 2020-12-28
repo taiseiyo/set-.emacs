@@ -268,16 +268,6 @@
 (setq python-indent-guess-indent-offset t)  
 (setq python-indent-guess-indent-offset-verbose nil)
 
-;; package-install -> tern and tern-auto-complete
-;; javascript の関数自動補完パッケージ
-(autoload 'tern-mode "tern.el" nil t)
-(add-hook 'js-mode-hook (lambda () (tern-mode t)))
-(add-hook 'js-mode-hook (lambda () (prettier-js-mode t)))
-(eval-after-load 'tern
-   '(progn
-      (require 'tern-auto-complete)
-      (tern-ac-setup)))
-
 ;;org-preview-mode の設定
 (add-to-list 'load-path
              (concat user-emacs-directory
@@ -294,6 +284,19 @@
 ;; codic をグローバル設定にする
 (global-set-key "\C-c\C-o" 'codic-translate)
 
-;; (require 'ox-qmd)
-;; (add-to-list 'ox-qmd-language-keyword-alist '("ruby" . "ruby"))
+;; React の jsx の設定
 (add-to-list 'auto-mode-alist '(".*\\.js\\'" . rjsx-mode))
+
+;; package-install -> tern and tern-auto-complete
+;; javascript プログラムの関数自動補完設定
+(autoload 'js2-mode "js2-mode" nil t)
+(add-to-list 'auto-mode-alist '(".*\\.js\\'" . js2-mode))
+
+(add-hook 'js2-mode-hook
+    (lambda ()
+        (tern-mode t)))
+
+(eval-after-load 'tern
+    '(progn
+        (require 'tern-auto-complete)
+        (tern-ac-setup)))
