@@ -300,3 +300,11 @@
     '(progn
         (require 'tern-auto-complete)
         (tern-ac-setup)))
+
+;; ロックファイルを消す
+(setq create-lockfile nil)
+;; scss-mode の編集の設定 → scss  → css
+
+(require 'scss-mode)
+(autoload 'scss-mode "scss-mode")
+(add-to-list 'auto-mode-alist '("\\.scss\\'" . scss-mode))
