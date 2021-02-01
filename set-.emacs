@@ -303,8 +303,16 @@
 
 ;; ロックファイルを消す
 (setq create-lockfile nil)
-;; scss-mode の編集の設定 → scss  → css
 
-(require 'scss-mode)
+;; scss-mode の編集の設定 → scss  → css
 (autoload 'scss-mode "scss-mode")
 (add-to-list 'auto-mode-alist '("\\.scss\\'" . scss-mode))
+(setq scss-compile-at-save t)
+
+(require 'auto-complete-config)
+(defun css-setup-ac ()
+  (setq ac-sources '(ac-source-dictionary ac-source-words-in-same-mode-buffers))
+  (ac-css-mode-setup)
+  (auto-complete-mode 1))
+
+(add-hook 'css-mode-hook #'css-setup-ac)
