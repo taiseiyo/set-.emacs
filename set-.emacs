@@ -178,8 +178,16 @@
  "org-table-next-" "org-table-previous" "org-cycle")
 
 ;;emacs 上での jedi の python mode の設定
+;; (add-hook 'python-mode-hook 'jedi:setup)
+;; (require 'jedi-core)
+;; (autoload 'jedi:setup "jedi" nil t)
+;; (add-hook 'python-mode-hook 'jedi:setup)
+;; (setq jedi:server-command '("/home/taisei/.emacs.d/elpa/jedi-core-20210202.856/jediepcserver.py"))
+
 (add-hook 'python-mode-hook 'jedi:setup)
 (setq jedi:complete-on-dot t)
+(setq jedi:use-shortcuts t)
+
 
 ;;emacs での自動スペルチェック
 ;;sudo apt-get install aspell aspell-en
@@ -229,6 +237,7 @@
 (add-hook 'css-mode-hook  'emmet-mode) ;; enable Emmet's css abbreviation
 
 ;; javascript の format を整える
+;; semicoron の自動挿入
 (require 'prettier-js)
 
 (add-hook 'js2-mode-hook 'prettier-js-mode)
@@ -257,7 +266,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (rjsx-mode codic helm-elscreen elscreen org-preview-html tern-auto-complete tern org-plus-contrib pangu-spacing migemo undo-tree prettier-js package-utils multiple-cursors js-format js-auto-format-mode jedi helm exec-path-from-shell company-jedi add-node-modules-path))))
+    (auto-complete jedi-core company-jedi rjsx-mode codic helm-elscreen elscreen org-preview-html tern-auto-complete tern org-plus-contrib pangu-spacing migemo undo-tree prettier-js package-utils multiple-cursors js-format js-auto-format-mode jedi helm exec-path-from-shell add-node-modules-path))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
