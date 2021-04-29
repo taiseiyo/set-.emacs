@@ -326,16 +326,15 @@
 
 (add-hook 'css-mode-hook #'css-setup-ac)
 
-(require 'migemo)
+;; migemo の設定
 
+(require 'migemo)
 ;; cmigemo(default)
 (setq migemo-command "cmigemo")
 (setq migemo-options '("-q" "--emacs"))
-
 ;; ruby migemo
 (setq migemo-command "ruby")
 (setq migemo-options '("-S" "migemo" "-t" "emacs" "-i" "\a"))
-
 ;; Set your installed path
 (setq migemo-dictionary "/usr/local/share/migemo/utf-8/migemo-dict")
 (setq migemo-user-dictionary nil)
