@@ -266,7 +266,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (auto-complete jedi-core company-jedi rjsx-mode codic helm-elscreen elscreen org-preview-html tern-auto-complete tern org-plus-contrib pangu-spacing migemo undo-tree prettier-js package-utils multiple-cursors js-format js-auto-format-mode jedi helm exec-path-from-shell add-node-modules-path))))
+    (helm-migemo auto-complete jedi-core company-jedi rjsx-mode codic helm-elscreen elscreen org-preview-html tern-auto-complete tern org-plus-contrib pangu-spacing migemo undo-tree prettier-js package-utils multiple-cursors js-format js-auto-format-mode jedi helm exec-path-from-shell add-node-modules-path))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -325,3 +325,20 @@
   (auto-complete-mode 1))
 
 (add-hook 'css-mode-hook #'css-setup-ac)
+
+(require 'migemo)
+
+;; cmigemo(default)
+(setq migemo-command "cmigemo")
+(setq migemo-options '("-q" "--emacs"))
+
+;; ruby migemo
+(setq migemo-command "ruby")
+(setq migemo-options '("-S" "migemo" "-t" "emacs" "-i" "\a"))
+
+;; Set your installed path
+(setq migemo-dictionary "/usr/local/share/migemo/utf-8/migemo-dict")
+(setq migemo-user-dictionary nil)
+(setq migemo-regex-dictionary nil)
+(setq migemo-coding-system 'utf-8-unix)
+(migemo-init)
