@@ -25,3 +25,4 @@
 - autopep8 ->  python 整形
 - rjsx-mode -> jsx を書くのが簡単になる
 - [[https://github.com/skk-dev/ddskk/blob/master/etc/dot.skk][skkの設定例]]
+- flycheck → list-packages からインストール
