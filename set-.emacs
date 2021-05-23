@@ -335,7 +335,7 @@
 ;; ruby migemo
 (setq migemo-command "ruby")
 (setq migemo-options '("-S" "migemo" "-t" "emacs" "-i" "\a"))
-;; Set your installed path
+;; Set your installed path → https://github.com/kyanagi/migemo-dict
 (setq migemo-dictionary "/usr/local/share/migemo/utf-8/migemo-dict")
 (setq migemo-user-dictionary nil)
 (setq migemo-regex-dictionary nil)
