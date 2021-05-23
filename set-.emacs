@@ -329,7 +329,7 @@
 ;; migemo の設定
 
 (require 'migemo)
-;; cmigemo(default)
+;; cmigemo(default) → sudo apt install cmigemo
 (setq migemo-command "cmigemo")
 (setq migemo-options '("-q" "--emacs"))
 ;; ruby migemo
