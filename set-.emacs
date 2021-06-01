@@ -373,3 +373,10 @@
 (setq lookup-default-dictionary-options
       '((:stemmer .  stem-english)))
 (setq lookup-use-kakasi nil)
+
+;; c++ の formatter ~/.clang-format
+(require 'clang-format)
+(add-hook 'c++-mode-hook 'clang-format-buffer)
+(global-set-key (kbd "C-c i") 'clang-format-region)
+(global-set-key (kbd "C-c u") 'clang-format-buffer)
+(setq clang-format-style-option "llvm")
