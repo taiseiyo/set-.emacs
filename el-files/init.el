@@ -6,7 +6,7 @@
 (setq show-paren-style 'parenthesis) 
 
 ;;追加のパッケージを登録
-
+(require 'package)
 (setq package-archives
       '(("gnu"   . "http://elpa.gnu.org/packages/")
         ("melpa" . "http://melpa.org/packages/")
