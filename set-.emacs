@@ -16,7 +16,8 @@
 ;; X11 specific
 (when (eq window-system 'x)
   (scroll-bar-mode -1)
-  (set-default-font "terminus-24")
+  ;; sudo apt install xfonts-terminus
+  (set-frame-font "terminus-18")
   ;; face
   (dolist (elem '((bold "LightGoldenrod")
 		  (underline "PaleGreen")
@@ -353,6 +354,13 @@
 (add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options)
 (setq company-idle-delay 0)
 
+;; c++ の formatter → sudo apt install clang-format and ~/.clang-format
+;; auto-clang-format.el
+(require 'auto-clang-format)
+(add-hook 'c++-mode-hook 'auto-clang-format-mode)
+(add-hook 'c-mode-hook 'auto-clang-format-mode)
+
+
 
 ;; Lookup → 辞書の設定
 ;; https://qiita.com/tet_kawagishi/items/f860801befb7674ae498
@@ -374,9 +382,3 @@
       '((:stemmer .  stem-english)))
 (setq lookup-use-kakasi nil)
 
-;; c++ の formatter ~/.clang-format
-(require 'clang-format)
-(add-hook 'c++-mode-hook 'clang-format-buffer)
-(global-set-key (kbd "C-c i") 'clang-format-region)
-(global-set-key (kbd "C-c u") 'clang-format-buffer)
-(setq clang-format-style-option "llvm")
