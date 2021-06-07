@@ -382,3 +382,15 @@
       '((:stemmer .  stem-english)))
 (setq lookup-use-kakasi nil)
 
+;; battery
+(require 'fancy-battery)
+(add-hook 'after-init-hook #'fancy-battery-mode)
+(setq fancy-battery-show-percentage t)
+;; 色設定
+(set-face-background 'default "#172727")
+(set-face-foreground 'default "white")
+;; メニューバーの非表示
+(menu-bar-mode -1)
+;; ツールバーの非表示
+(tool-bar-mode -1)
+
