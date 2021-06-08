@@ -33,6 +33,8 @@
 - fancy-battery
 * .el file を動かす為に必要なプログラム
 - pylint(flylint.el)
+  - sudo apt install pyflake3
+
 #+begin_src python 
 #!/usr/bin/env python3 
 #
@@ -50,7 +52,7 @@ sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 import re
 import subprocess
 
-from perl import die, warn, getopts
+from perlcompat import die, warn, getopts
 import tbdump
 
 def usage():
@@ -59,7 +61,7 @@ def usage():
 def python_lint(file, src_lines):
     """Check the syntax of the Python program FILE.  It is assumed that that
     contents of FILE are stored in SRC_LINES."""
-    result = subprocess.run(['pyflakes', file],
+    result = subprocess.run(['pyflakes3', file],
                             stdout=subprocess.PIPE,
                             stderr=subprocess.PIPE)
     lines = result.stdout.splitlines() + result.stderr.splitlines()
