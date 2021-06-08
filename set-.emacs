@@ -13,6 +13,9 @@
 
 (keyboard-translate ?\C-h ?\C-?)
 
+(add-to-list 'default-frame-alist
+	     '(font . "terminus-18"))
+
 ;; X11 specific
 (when (eq window-system 'x)
   (scroll-bar-mode -1)
@@ -166,17 +169,17 @@
   (server-start))
 
 ;;org-table mode を楽にする
-(require 'org-eldoc)
+;; (require 'org-eldoc)
 
-(defadvice org-eldoc-documentation-function (around add-field-info activate)
-  (or
-   (ignore-errors (and (not (org-at-table-hline-p)) (org-table-field-info nil)))
-   ad-do-it))
+;; (defadvice org-eldoc-documentation-function (around add-field-info activate)
+;;   (or
+;;    (ignore-errors (and (not (org-at-table-hline-p)) (org-table-field-info nil)))
+;;    ad-do-it))
 
-(add-hook 'org-mode-hook 'eldoc-mode)
+;; (add-hook 'org-mode-hook 'eldoc-mode)
 
-(eldoc-add-command-completions
- "org-table-next-" "org-table-previous" "org-cycle")
+;; (eldoc-add-command-completions
+;;  "org-table-next-" "org-table-previous" "org-cycle")
 
 ;;emacs 上での jedi の python mode の設定
 ;; (add-hook 'python-mode-hook 'jedi:setup)
@@ -217,8 +220,6 @@
      ))
 
 (require 'wise-compile)
-(require 'birthday-card)
-(require 'birthday-animation)
 (require 'pman)
 
 (global-set-key "\C-xp" 'pman)
@@ -382,10 +383,6 @@
       '((:stemmer .  stem-english)))
 (setq lookup-use-kakasi nil)
 
-;; battery
-(require 'fancy-battery)
-(add-hook 'after-init-hook #'fancy-battery-mode)
-(setq fancy-battery-show-percentage t)
 ;; 色設定
 (set-face-background 'default "#172727")
 (set-face-foreground 'default "white")

@@ -1,3 +1,4 @@
+* package install 必要
 - jedi
 - (multiple-cursors)
 - tern 
@@ -27,3 +28,5 @@
 - [[https://github.com/skk-dev/ddskk/blob/master/etc/dot.skk][skkの設定例]]
 - flycheck → list-packages からインストール
 - clang-format → sudo apt install clang-format and ~/.clang-format
+- irony
+- fancy-battery
