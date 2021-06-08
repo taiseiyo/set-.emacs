@@ -13,13 +13,13 @@
 
 (keyboard-translate ?\C-h ?\C-?)
 
+  ;; sudo apt install xfonts-terminus
 (add-to-list 'default-frame-alist
 	     '(font . "terminus-18"))
 
 ;; X11 specific
 (when (eq window-system 'x)
   (scroll-bar-mode -1)
-  ;; sudo apt install xfonts-terminus
   (set-frame-font "terminus-18")
   ;; face
   (dolist (elem '((bold "LightGoldenrod")
