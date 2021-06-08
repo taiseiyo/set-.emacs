@@ -24,13 +24,13 @@
 - prettier-js
 - undo-tree
 - codic -> メソッド名決める時に便利
-- autopep8 ->  python 整形
+- autopep8 ->  python 整形 -> *sudo pip3 install autopep8*
 - rjsx-mode -> jsx を書くのが簡単になる
 - [[https://github.com/skk-dev/ddskk/blob/master/etc/dot.skk][skkの設定例]]
 - flycheck → list-packages からインストール
 - clang-format → sudo apt install clang-format and ~/.clang-format
 - irony
-- fancy-battery
+
 * .el file を動かす為に必要なプログラム
 - pylint(flylint.el)
   - sudo apt install pyflake3
