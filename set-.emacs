@@ -355,7 +355,6 @@
 ;; Lookup → 辞書の設定
 ;; https://qiita.com/tet_kawagishi/items/f860801befb7674ae498
 ;; https://wordnetepwing.osdn.jp/ から wordnet-enjp をダウンロード
-;; https://classicalepwing.osdn.jp/ から eld をダウンロード
 
 (autoload 'lookup "lookup" nil t)
 (autoload 'lookup-region "lookup" nil t)
@@ -365,8 +364,7 @@
 (define-key ctl-x-map "\C-y" 'lookup-pattern)
 (setq lookup-search-agents
       '(
-	(ndeb "/usr/share/emacs/26.1/site-lisp/dict/wordnet-enjp")
-	(ndeb "/usr/share/emacs/26.1/site-lisp/dict/eld")))
+	(ndeb "/usr/share/emacs/27.1/site-lisp/dict/wordnet-enjp")))
 
 (setq lookup-default-dictionary-options
       '((:stemmer .  stem-english)))
