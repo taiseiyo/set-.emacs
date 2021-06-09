@@ -13,13 +13,17 @@
 
 (keyboard-translate ?\C-h ?\C-?)
 
-  ;; sudo apt install xfonts-terminus
 (add-to-list 'default-frame-alist
-	     '(font . "terminus-18"))
+                       '(font . "terminus-20"))
+
+;; emacs27.1 では cl 関数に警告がでるので無効にする
+(setq byte-compile-warnings '(not cl-functions obsolete))
+
 
 ;; X11 specific
 (when (eq window-system 'x)
   (scroll-bar-mode -1)
+  ;; sudo apt install xfonts-terminus
   (set-frame-font "terminus-18")
   ;; face
   (dolist (elem '((bold "LightGoldenrod")
@@ -168,26 +172,6 @@
 (unless (server-running-p)
   (server-start))
 
-;;org-table mode を楽にする
-;; (require 'org-eldoc)
-
-;; (defadvice org-eldoc-documentation-function (around add-field-info activate)
-;;   (or
-;;    (ignore-errors (and (not (org-at-table-hline-p)) (org-table-field-info nil)))
-;;    ad-do-it))
-
-;; (add-hook 'org-mode-hook 'eldoc-mode)
-
-;; (eldoc-add-command-completions
-;;  "org-table-next-" "org-table-previous" "org-cycle")
-
-;;emacs 上での jedi の python mode の設定
-;; (add-hook 'python-mode-hook 'jedi:setup)
-;; (require 'jedi-core)
-;; (autoload 'jedi:setup "jedi" nil t)
-;; (add-hook 'python-mode-hook 'jedi:setup)
-;; (setq jedi:server-command '("/home/taisei/.emacs.d/elpa/jedi-core-20210202.856/jediepcserver.py"))
-
 (add-hook 'python-mode-hook 'jedi:setup)
 (setq jedi:complete-on-dot t)
 (setq jedi:use-shortcuts t)
@@ -220,6 +204,8 @@
      ))
 
 (require 'wise-compile)
+;; (require 'birthday-card)
+;; (require 'birthday-animation)
 (require 'pman)
 
 (global-set-key "\C-xp" 'pman)
@@ -229,6 +215,7 @@
 (add-hook 'emacs-lisp-mode-hook 'hdefd-highlight-mode nil)
 ;; エンターキーを押した時に改行をいれない
 (setq skk-egg-like-newline t)
+
 
 ;; org-mode で presentation を行う時の設定 
 ;; (autoload 'org-present "org-present" nil t)
@@ -267,8 +254,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   (quote
-    (company-irony flycheck-irony irony helm-migemo auto-complete jedi-core company-jedi rjsx-mode codic helm-elscreen elscreen org-preview-html tern-auto-complete tern org-plus-contrib pangu-spacing migemo undo-tree prettier-js package-utils multiple-cursors js-format js-auto-format-mode jedi helm exec-path-from-shell add-node-modules-path))))
+   '(lua-mode package+ company-irony flycheck-irony irony helm-migemo auto-complete jedi-core company-jedi rjsx-mode codic helm-elscreen elscreen org-preview-html tern-auto-complete tern org-plus-contrib pangu-spacing migemo undo-tree prettier-js package-utils multiple-cursors js-format js-auto-format-mode jedi helm exec-path-from-shell add-node-modules-path)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -332,17 +318,20 @@
 
 (require 'migemo)
 ;; cmigemo(default) → sudo apt install cmigemo
-(setq migemo-command "cmigemo")
+;; Set your installed path → https://github.com/kyanagi/migemo-dict(file)
+;; (setq migemo-dictionary "/usr/local/share/migemo/utf-8/migemo-dict")
+
+(setq migemo-dictionary "/usr/share/cmigemo/utf-8/migemo-dict")
+(setq migemo-command "/usr/bin/cmigemo")
 (setq migemo-options '("-q" "--emacs"))
-;; ruby migemo
-(setq migemo-command "ruby")
-(setq migemo-options '("-S" "migemo" "-t" "emacs" "-i" "\a"))
-;; Set your installed path → https://github.com/kyanagi/migemo-dict
-(setq migemo-dictionary "/usr/share/cmigemo/utf-8/migemo-dict") ;;← migemo-dict は file
 (setq migemo-user-dictionary nil)
 (setq migemo-regex-dictionary nil)
-(setq migemo-coding-system 'utf-8-unix)
+(setq migemo-coding-system 'utf-8)
+
+(load-library "migemo")
 (migemo-init)
+
+
 
 ;; irony -> c 言語関係 → https://note.com/imaich1/n/nbb909b4bb55b#W2eiS
 ;; flyckeck -> c 言語関係 error highlight
@@ -390,4 +379,3 @@
 (menu-bar-mode -1)
 ;; ツールバーの非表示
 (tool-bar-mode -1)
-
