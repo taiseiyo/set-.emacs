@@ -23,7 +23,9 @@
 - tern-auto-complete
 - prettier-js
 - undo-tree
-- lua-mode -> edit lua major mode ->rc.lua(awesome 設定ファイル)を編集するのに便利
+- lua-mode 
+  - edit lua major mode -> rc.lua(awesome 設定ファイル)を編集するのに便利
+  - .emacs に追加の設定は必要なく、lua ファイルを開けたら自動で動作する
 - codic -> メソッド名決める時に便利
 - autopep8 ->  python 整形 -> *sudo pip3 install autopep8*
 - rjsx-mode -> jsx を書くのが簡単になる
