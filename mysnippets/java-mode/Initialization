@@ -1,0 +1,14 @@
+# -*- mode: snippet -*-
+# name: Initialization
+# key: start
+# --
+#
+# Copyright (c) 2021, Suzuki Taisei.
+# All rights reserved.
+#
+
+class Sample{
+    public static void main(String[] args) {
+        System.out.println("Hello, " + args[0]);
+    }
+}

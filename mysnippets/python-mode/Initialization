@@ -1,0 +1,15 @@
+# -*- mode: snippet -*-
+# name: Initialization	 
+# key: start
+# --
+#!/usr/bin/env python
+#
+# Copyright (c) 2021, Suzuki Taisei.
+# All rights reserved.
+#
+
+def main():
+    pass
+
+
+main()

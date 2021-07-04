@@ -1,0 +1,23 @@
+# -*- mode: snippet -*-
+# name: Initialization
+# key: start
+# --
+<!DOCTYPE html>
+<html>
+  <!-- Copyright (c) 2021, Suzuki Taisei. -->
+  <!-- All rights reserved. -->
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <title>templete file</title>
+    <link href="" rel="stylesheet"/>
+    <link href="" rel="icon" type="" href=""/>
+  </head>
+
+  <body>
+    <div>
+      
+    </div>
+  </body>
+  
+</html>
