@@ -1,4 +1,4 @@
-* package install 必要
+* package install 必要(list-packages から)
 - jedi
 - (multiple-cursors)
 - tern 
@@ -38,6 +38,9 @@
 #+begin_src bash
 sudo apt install elpa-yasnippet-snippets
 #+end_src
+
+- typescript 関係
+[[https://blog.takuchalle.dev/post/2018/10/17/emacs_typescript_setup/][記事]]
 
 * .el file を動かす為に必要なプログラム
 - pylint(flylint.el)
