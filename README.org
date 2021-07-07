@@ -40,7 +40,7 @@ sudo apt install elpa-yasnippet-snippets
 #+end_src
 
 - typescript 関係
-[[https://github.com/ananthakumaran/tide][tide github page]]
+  - [[https://github.com/ananthakumaran/tide][tide github page]]
 
 * .el file を動かす為に必要なプログラム
 - pylint(flylint.el)
