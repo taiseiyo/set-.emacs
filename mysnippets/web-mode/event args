@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: event args
+# key: e
+# --
+e: React.ChangeEvent<any>

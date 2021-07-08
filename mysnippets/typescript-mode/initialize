@@ -1,0 +1,23 @@
+# -*- mode: snippet -*-
+# name: initialize
+# key: start
+# --
+
+#!/usr/bin/env node
+//
+// Copyright (c) 2021, Suzuki Taisei.
+// All rights reserved.
+//
+
+class Sample {
+
+    constructor() {
+    }
+    
+}
+
+let main = () => {
+
+}
+
+main()

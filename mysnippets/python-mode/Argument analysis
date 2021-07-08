@@ -1,0 +1,14 @@
+# -*- mode: snippet -*-
+# name: Argument analysis 
+# key: arg_parse
+# --
+
+def arg_parse():
+    parser = argparse.ArgumentParser(description="fileinput & argparse")
+    parser.add_argument('files', metavar='FILE', nargs='*',
+                        help='files to read, if empty, stdin is used')
+    parser.add_argument('-r', '--rho', default=0.1,
+                        type=float, help='rho of epsilon')
+    parser.add_argument('-v', '--visit', default=5,
+                        type=int, help='rho of epsilon')
+    return parser.parse_args()
