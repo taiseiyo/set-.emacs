@@ -64,7 +64,6 @@ import re
 import subprocess
 
 from perlcompat import die, warn, getopts
-import tbdump
 
 def usage():
     die("usage: {} file".format(sys.argv[0]))

@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+# name: function-dict-slice
+# key: dict_slice
+# --
+from itertools import islice
+
+
+def dict_slice(data, size):
+    it = iter(data)
+    for i in range(0, len(data), size):
+        yield {k: data[k] for k in islice(it, size)}
