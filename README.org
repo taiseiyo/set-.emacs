@@ -1,7 +1,6 @@
 * package install 必要(list-packages から)
 - helm
 - jedi
-- (multiple-cursors) → なくてもいい
 - tern 
   - ~/.tern-config 
 #+BEGIN_SRC
