@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: sass_mixin
+# key: @mixin
+# --
+
+@mixin sp {
+  @media (max-width: ($pc)) {
+    @content;
+  }
+}
