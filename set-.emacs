@@ -254,7 +254,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(yaxception log4e json-mode company tide ts-comint typescript-mode lua-mode package+ company-irony flycheck-irony irony helm-migemo auto-complete jedi-core company-jedi rjsx-mode codic helm-elscreen elscreen org-preview-html tern-auto-complete tern org-plus-contrib pangu-spacing migemo undo-tree prettier-js package-utils multiple-cursors js-format js-auto-format-mode jedi helm exec-path-from-shell add-node-modules-path)))
+   '(prettier yaxception log4e json-mode company tide ts-comint typescript-mode lua-mode package+ company-irony flycheck-irony irony helm-migemo auto-complete jedi-core company-jedi rjsx-mode codic helm-elscreen elscreen org-preview-html tern-auto-complete tern org-plus-contrib pangu-spacing migemo undo-tree prettier-js package-utils js-format js-auto-format-mode jedi helm exec-path-from-shell add-node-modules-path)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -286,17 +286,14 @@
 
 ;; package-install -> tern and tern-auto-complete
 ;; javascript プログラムの関数自動補完設定
-(autoload 'js2-mode "js2-mode" nil t)
-(add-to-list 'auto-mode-alist '(".*\\.js\\'" . js2-mode))
-
-(add-hook 'js2-mode-hook
-    (lambda ()
-        (tern-mode t)))
-
+(add-hook 'js2-mode-hook (lambda () (tern-mode t)))
 (eval-after-load 'tern
-    '(progn
-        (require 'tern-auto-complete)
-        (tern-ac-setup)))
+   '(progn
+      (require 'tern-auto-complete)
+      (tern-ac-setup)))
+
+(add-hook 'js2-mode-hook (lambda () (auto-complete-mode t)))
+
 
 ;; ロックファイルを消す
 (setq create-lockfile nil)
@@ -394,10 +391,6 @@
 (yas-global-mode 1)
 
 
-;; typescript の設定
-;; (require 'typescript)
-;; (add-to-list 'auto-mode-alist '("\\.ts\\'" . typescript-mode))
-
 ;; typescript の設定：補完系, フォーマット系
 (require 'tide)
 (defun setup-tide-mode ()
@@ -427,3 +420,8 @@
               (setup-tide-mode))))
 ;; enable typescript-tslint checker
 (flycheck-add-mode 'typescript-tslint 'web-mode)
+
+
+
+(require 'onamae-mode)
+(require 'onamae-send)
