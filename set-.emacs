@@ -283,7 +283,6 @@
 
 ;; React の jsx の設定
 (add-to-list 'auto-mode-alist '(".*\\.js\\'" . rjsx-mode))
-
 ;; package-install -> tern and tern-auto-complete
 ;; javascript プログラムの関数自動補完設定
 (add-hook 'js2-mode-hook (lambda () (tern-mode t)))

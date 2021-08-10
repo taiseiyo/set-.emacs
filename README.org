@@ -22,6 +22,7 @@
 #+END_SRC
 - tern-auto-complete
 - prettier-js
+  - npm install -g prettier
 - undo-tree
 - lua-mode 
   - edit lua major mode -> rc.lua(awesome 設定ファイル)を編集するのに便利
