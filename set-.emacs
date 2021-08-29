@@ -421,6 +421,3 @@
 (flycheck-add-mode 'typescript-tslint 'web-mode)
 
 
-
-(require 'onamae-mode)
-(require 'onamae-send)

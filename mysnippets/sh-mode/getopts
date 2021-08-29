@@ -1,0 +1,22 @@
+# -*- mode: snippet -*-
+# name: getopts
+# key: getopts
+# --
+while getopts hbut: opt; do
+    case "$opt" in
+	h)
+	    echo "use -b(built-in) or -u(usb-speaker) as option"
+            ;;
+        b)
+	    ;;
+	u)
+	    ;;
+	t)
+	    t="$OPTARG"
+	    echo "this is test argument"
+	    ;;
+        \?)
+	    exit 1
+	    ;;
+    esac
+done

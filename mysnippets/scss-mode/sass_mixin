@@ -3,8 +3,9 @@
 # key: @mixin
 # --
 
+$sp: 414px;
 @mixin sp {
-  @media (max-width: ($pc)) {
+  @media (max-width: ($sp)) {
     @content;
   }
 }

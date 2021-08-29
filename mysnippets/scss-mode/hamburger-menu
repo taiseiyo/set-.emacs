@@ -1,0 +1,60 @@
+# -*- mode: snippet -*-
+# name: hamburger-menu
+# key: ham
+# --
+.ham {
+    position: relative;
+    width: 60px;
+    height: 55px;
+    cursor: pointer;
+    background-color: aqua;
+    .ham_line {
+	position: relative;
+	display: block;
+	left: 10px;
+	width: 40px;
+	height: 3px;
+	background-color: #333333;
+    }
+    .ham_line1 {
+	@extend .ham_line;
+	top: 10px;
+    }
+    .ham_line2 {
+	@extend .ham_line;
+	top: 21px;
+    }
+    .ham_line3 {
+	@extend .ham_line;
+	top: 32px;
+    }
+}
+
+.ham_clicked{
+    @extend .ham;
+    .ham_line1 {
+	transform: rotate(45deg);
+	top: 23px;
+    }
+    .ham_line2 {
+	width: 0px;
+    }
+    .ham_line3 {
+	transform: rotate(-45deg);
+	top: 18px;
+    }
+}
+
+
+.menu {
+    position: fixed;
+    width: 300px;
+    height: 300px;
+    left: -400px;
+    background-color: aquamarine;
+    transition: all 0.3s;
+}
+
+.menu_clicked{
+    left: 8px;
+}

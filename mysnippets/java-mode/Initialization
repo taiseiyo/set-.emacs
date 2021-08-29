@@ -2,10 +2,10 @@
 # name: Initialization
 # key: start
 # --
-#
-# Copyright (c) 2021, Suzuki Taisei.
-# All rights reserved.
-#
+//
+// Copyright (c) 2021, Suzuki Taisei.
+// All rights reserved.
+//  
 
 class Sample{
     public static void main(String[] args) {
