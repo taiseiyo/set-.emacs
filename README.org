@@ -34,11 +34,13 @@
 - flycheck → list-packages からインストール
 - clang-format → sudo apt install clang-format and ~/.clang-format
 - irony
-
 - yasnippet
 #+begin_src bash
 sudo apt install elpa-yasnippet-snippets
 #+end_src
+- *meghanada-emacs*
+  - java の補完 → [[https://github.com/mopemope/meghanada-emacs][URL]]
+  - [[https://qiita.com/mopemope/items/d1658a4ac72d85db9ccf#meghanada][qiita記事]]
 - typescript 関係
   - [[https://github.com/ananthakumaran/tide][tide github page]]
 
