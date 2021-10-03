@@ -254,7 +254,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(prettier yaxception log4e json-mode company tide ts-comint typescript-mode lua-mode package+ company-irony flycheck-irony irony helm-migemo auto-complete jedi-core company-jedi rjsx-mode codic helm-elscreen elscreen org-preview-html tern-auto-complete tern org-plus-contrib pangu-spacing migemo undo-tree prettier-js package-utils js-format js-auto-format-mode jedi helm exec-path-from-shell add-node-modules-path)))
+   '(meghanada company-emacs-eclim prettier yaxception log4e json-mode company tide ts-comint typescript-mode lua-mode package+ company-irony flycheck-irony irony helm-migemo auto-complete jedi-core company-jedi rjsx-mode codic helm-elscreen elscreen org-preview-html tern-auto-complete tern org-plus-contrib pangu-spacing migemo undo-tree prettier-js package-utils js-format js-auto-format-mode jedi helm exec-path-from-shell add-node-modules-path)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -421,3 +421,20 @@
 (flycheck-add-mode 'typescript-tslint 'web-mode)
 
 
+;; meghanada-mode
+(require 'meghanada)
+(add-hook 'java-mode-hook
+          (lambda ()
+            ;; meghanada-mode on
+            (meghanada-mode t)
+            (flycheck-mode +1)
+            (setq c-basic-offset 2)
+            ;; use code format
+            (add-hook 'before-save-hook 'meghanada-code-beautify-before-save)))
+(cond
+   ((eq system-type 'windows-nt)
+    (setq meghanada-java-path (expand-file-name "bin/java.exe" (getenv "JAVA_HOME")))
+    (setq meghanada-maven-path "mvn.cmd"))
+   (t
+    (setq meghanada-java-path "java")
+    (setq meghanada-maven-path "mvn")))
