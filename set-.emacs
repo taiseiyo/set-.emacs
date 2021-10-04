@@ -421,7 +421,7 @@
 (flycheck-add-mode 'typescript-tslint 'web-mode)
 
 
-;; meghanada-mode
+;; meghanada-mode java の補完、リント、エラーチェッカー
 (require 'meghanada)
 (add-hook 'java-mode-hook
           (lambda ()
@@ -438,3 +438,6 @@
    (t
     (setq meghanada-java-path "java")
     (setq meghanada-maven-path "mvn")))
+
+;;今日の日付にマークを付ける
+(add-hook 'calendar-today-visible-hook 'calendar-mark-today)
