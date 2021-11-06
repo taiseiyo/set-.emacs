@@ -26,7 +26,7 @@
   
   ;; FiraCode の Nerd Font(github より入手)に変更
   (when (member "FiraCode Nerd Font" (font-family-list))
-    (set-frame-font "FiraCode Nerd Font-8" t t))
+    (set-frame-font "FiraCode Nerd Font-9" t t))
   
   ;; face
   (dolist (elem '((bold "LightGoldenrod")
