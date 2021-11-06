@@ -22,9 +22,8 @@
 (when (eq window-system 'x)
   (scroll-bar-mode -1)
   ;; sudo apt install xfonts-terminus
-  ;; (add-to-list 'default-frame-alist
-  ;;                        '(font . "terminus-20"))
-
+  ;; (set-frame-font "terminus-18")
+  
   ;; FiraCode の Nerd Font(github より入手)に変更
   (when (member "FiraCode Nerd Font" (font-family-list))
     (set-frame-font "FiraCode Nerd Font-8" t t))
