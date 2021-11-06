@@ -1,4 +1,5 @@
 * package install 必要(list-packages から)
+- [[https://github.com/ryanoasis/nerd-fonts][nerd-fonts]]
 - helm
 - jedi
 - tern 

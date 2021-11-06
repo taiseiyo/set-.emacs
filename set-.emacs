@@ -13,8 +13,6 @@
 
 (keyboard-translate ?\C-h ?\C-?)
 
-(add-to-list 'default-frame-alist
-                       '(font . "terminus-20"))
 
 ;; emacs27.1 では cl 関数に警告がでるので無効にする
 (setq byte-compile-warnings '(not cl-functions obsolete))
@@ -24,7 +22,13 @@
 (when (eq window-system 'x)
   (scroll-bar-mode -1)
   ;; sudo apt install xfonts-terminus
-  (set-frame-font "terminus-18")
+  ;; (add-to-list 'default-frame-alist
+  ;;                        '(font . "terminus-20"))
+
+  ;; FiraCode の Nerd Font(github より入手)に変更
+  (when (member "FiraCode Nerd Font" (font-family-list))
+    (set-frame-font "FiraCode Nerd Font-8" t t))
+  
   ;; face
   (dolist (elem '((bold "LightGoldenrod")
 		  (underline "PaleGreen")
@@ -441,3 +445,4 @@
 
 ;;今日の日付にマークを付ける
 (add-hook 'calendar-today-visible-hook 'calendar-mark-today)
+
