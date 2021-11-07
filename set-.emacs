@@ -117,23 +117,6 @@
 ;;package-install の鍵設定(gnu)
 (setq package-check-signature nil)
 
-;;flylint の設定
-(autoload 'flylint-mode "flylint" nil t)
-(add-hook 'python-mode-hook
-	  '(lambda ()
-	     (flylint-mode 1)))
-(add-hook 'sh-mode-hook
-	  '(lambda ()
-	     (flylint-mode 1)))
-(add-hook 'c-mode-hook
-  	  '(lambda ()
-	     (flylint-mode 1)))
-(add-hook 'emacs-lisp-mode-hook
-  	  '(lambda ()
-	     (flylint-mode 1)))
-
-
-
 ;; mark 消さない
 (setq mew-delete-unread-mark-by-mark nil)
 ;;mew の IMAP passward 飛す
@@ -445,3 +428,6 @@
 ;;今日の日付にマークを付ける
 (add-hook 'calendar-today-visible-hook 'calendar-mark-today)
 
+;; python の list 機能: sudo apt install pyflake3
+(require 'flymake-python-pyflakes)
+(add-hook 'python-mode-hook 'flymake-python-pyflakes-load)
