@@ -1,5 +1,6 @@
-- sudo pip install pyflakes
+- sudo pip install pyflakes perlcompat
 
+- 以下を pylint として保存し、sample.py などを作成し実行してみる
 #+begin_src python 
 #!/usr/bin/env python3
 #
