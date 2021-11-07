@@ -54,7 +54,7 @@
   :group 'flymake
   :prefix "flymake-python-pyflakes-")
 
-(defcustom flymake-python-pyflakes-executable "pyflakes3"
+(defcustom flymake-python-pyflakes-executable "pyflakes"
   "Pyflakes executable to use for syntax checking."
   :type 'string
   :group 'flymake-python-pyflakes)
