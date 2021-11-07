@@ -1,6 +1,6 @@
 * .el file を動かす為に必要なプログラム
 - pylint(flylint.el)
-  - sudo apt install pyflake3
+  - sudo apt install pyflakes3
 
 #+begin_src python 
 #!/usr/bin/env python3 
