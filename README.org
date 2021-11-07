@@ -1,6 +1,7 @@
 * package install 必要(list-packages から)
 - [[https://github.com/ryanoasis/nerd-fonts][nerd-fonts]]
 - helm
+ - helm-lib
 - jedi
 - tern 
   - ~/.tern-config 
@@ -22,7 +23,9 @@
 }
 #+END_SRC
 - tern-auto-complete
+- emmet-mode
 - prettier-js
+  - sudo apt install nodejs npm
   - npm install -g prettier
 - undo-tree
 - lua-mode 
@@ -44,6 +47,3 @@ sudo apt install elpa-yasnippet-snippets
   - [[https://qiita.com/mopemope/items/d1658a4ac72d85db9ccf#meghanada][qiita記事]]
 - typescript 関係
   - [[https://github.com/ananthakumaran/tide][tide github page]]
-
-- [[https://github.com/taiseiyo/onamae-mode][onamae-mode]] (taiseiyo private repository)
-
