@@ -39,11 +39,14 @@
 - rjsx-mode -> jsx を書くのが簡単になる
 - [[https://github.com/skk-dev/ddskk/blob/master/etc/dot.skk][skkの設定例]]
 - flycheck → list-packages からインストール
+- flymake
+#+begin_src bash
+sudo pip install pyflakes
+#+end_src
 - clang-format
 #+begin_src bash
 sudo apt install clang-format and ~/.clang-format
 #+end_src
-
 - irony
 - yasnippet
 #+begin_src bash
