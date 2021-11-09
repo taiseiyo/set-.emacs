@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-package_list="helm tern tern-auto-complete emmet-mode prettier-js undo-tree lua-mode codic rjsx-mode flycheck irony meghanada tide"
+package_list="helm tern tern-auto-complete emmet-mode prettier-js undo-tree lua-mode codic rjsx-mode flycheck irony meghanada tide clang-format"
 
 emacsclient -e "(package-refresh-contents)"
 

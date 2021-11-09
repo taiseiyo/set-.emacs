@@ -1,4 +1,4 @@
-- sudo pip install pyflakes perlcompat
+- sudo pip install pyflakes perlcompat tbdump
 
 - 以下を pylint として保存し、sample.py などを作成し実行してみる
 #+begin_src python 

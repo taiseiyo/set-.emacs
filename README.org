@@ -5,7 +5,6 @@
 - jedi
  - sudo apt install libffi-dev
  - sudo pip install jedi virtualenv
-
 - tern 
   - ~/.tern-config 
 #+BEGIN_SRC
