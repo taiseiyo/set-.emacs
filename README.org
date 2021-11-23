@@ -52,3 +52,5 @@ sudo apt install elpa-yasnippet-snippets
   - [[https://qiita.com/mopemope/items/d1658a4ac72d85db9ccf#meghanada][qiita記事]]
 - typescript 関係
   - [[https://github.com/ananthakumaran/tide][tide github page]]
+- visual-regexp-steroids
+  - regexp i-search の強化

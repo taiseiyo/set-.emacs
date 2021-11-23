@@ -239,8 +239,10 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(foreign-regexp/regexp-type 'python)
  '(package-selected-packages
-   '(package_list meghanada company-emacs-eclim prettier yaxception log4e json-mode company tide ts-comint typescript-mode lua-mode package+ company-irony flycheck-irony irony helm-migemo auto-complete jedi-core company-jedi rjsx-mode codic helm-elscreen elscreen org-preview-html tern-auto-complete tern org-plus-contrib pangu-spacing migemo undo-tree prettier-js package-utils js-format js-auto-format-mode jedi helm exec-path-from-shell add-node-modules-path)))
+   '(visual-regexp-steroids package_list meghanada company-emacs-eclim prettier yaxception log4e json-mode company tide ts-comint typescript-mode lua-mode package+ company-irony flycheck-irony irony helm-migemo auto-complete jedi-core company-jedi rjsx-mode codic helm-elscreen elscreen org-preview-html tern-auto-complete tern org-plus-contrib pangu-spacing migemo undo-tree prettier-js package-utils js-format js-auto-format-mode jedi helm exec-path-from-shell add-node-modules-path))
+ '(reb-re-syntax 'foreign-regexp))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -428,11 +430,6 @@
 ;;今日の日付にマークを付ける
 (add-hook 'calendar-today-visible-hook 'calendar-mark-today)
 
-;; python の list 機能: sudo apt install pyflake3
-;; (require 'flymake-python-pyflakes)
-;; (add-hook 'python-mode-hook 'flymake-python-pyflakes-load)
-
-
 (autoload 'flylint-mode "flylint" nil t)
 (add-hook 'python-mode-hook
        '(lambda ()
@@ -447,3 +444,8 @@
        '(lambda ()
           (flylint-mode 1)))
 
+;; (require 'url-decode)
+(require 'visual-regexp-steroids)
+(setq vr/engine 'python)
+(global-set-key (kbd "C-M-r") 'vr/isearch-backward)
+(global-set-key (kbd "C-M-s") 'vr/isearch-forward)
