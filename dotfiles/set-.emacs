@@ -444,8 +444,16 @@
        '(lambda ()
           (flylint-mode 1)))
 
-;; (require 'url-decode)
 (require 'visual-regexp-steroids)
 (setq vr/engine 'python)
 (global-set-key (kbd "C-M-r") 'vr/isearch-backward)
 (global-set-key (kbd "C-M-s") 'vr/isearch-forward)
+
+(require 'ac-slime)
+(add-hook 'slime-mode-hook 'set-up-slime-ac)
+(add-hook 'slime-repl-mode-hook 'set-up-slime-ac)
+(eval-after-load "auto-complete"
+   '(add-to-list 'ac-modes 'slime-repl-mode 'emacs-lisp-mode))
+
+;; (require 'url-decode)
+;; (require 'test)
