@@ -54,3 +54,6 @@ sudo apt install elpa-yasnippet-snippets
   - [[https://github.com/ananthakumaran/tide][tide github page]]
 - visual-regexp-steroids
   - regexp i-search の強化
+
+- [[https://github.com/purcell/ac-slime][ac-slime: ielm(emacs REPL)の補完]]
+  - [[https://github.com/slime/slime][slime:ac-slimeに必要なパッケージ]]
