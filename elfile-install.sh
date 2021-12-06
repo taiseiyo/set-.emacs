@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+sudo apt install skkdic-extra
+
 package_list="helm jedi tern tern-auto-complete emmet-mode prettier-js undo-tree lua-mode codic rjsx-mode flycheck irony meghanada tide clang-format visual-regexp-steroids"
 
 emacsclient -e "(package-refresh-contents)"
