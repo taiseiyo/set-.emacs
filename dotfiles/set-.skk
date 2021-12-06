@@ -1,1 +1,4 @@
 (setq skk-use-look t)
+
+;; sudo apt install skkdic-extra
+(setq skk-extra-jisyo-file-list(list '("/usr/share/skk/SKK-JISYO.JIS3_4" . euc-jisx0213) "/usr/share/skk/SKK-JISYO.zipcode"))
