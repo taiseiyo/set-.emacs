@@ -8,6 +8,7 @@
 ;; installed packages.  Don't delete this line.  If you don't want it,
 ;; just comment it out by adding a semicolon to the start of the line.
 ;; You may delete these explanatory comments.
+(setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
 (setq load-path(append '("~/.emacs.d/lisp/") load-path))
 
 
@@ -189,7 +190,6 @@
      org-mode-hook
      ))
 
-(require 'wise-compile)
 ;; (require 'birthday-card)
 ;; (require 'birthday-animation)
 (require 'pman)
@@ -201,7 +201,9 @@
 (add-hook 'emacs-lisp-mode-hook 'hdefd-highlight-mode nil)
 ;; エンターキーを押した時に改行をいれない
 (setq skk-egg-like-newline t)
-
+;; dired-x をロードした場合，C-x C-j に skk-mode をバインドしなおす
+(when (require 'dired-x nil t)
+  (global-set-key "\C-x\C-j" 'skk-mode))
 
 ;; org-mode で presentation を行う時の設定 
 ;; (autoload 'org-present "org-present" nil t)
@@ -240,8 +242,9 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(foreign-regexp/regexp-type 'python)
+ '(package-archives '(("gnu" . "http://elpa.gnu.org/packages/")))
  '(package-selected-packages
-   '(visual-regexp-steroids package_list meghanada company-emacs-eclim prettier yaxception log4e json-mode company tide ts-comint typescript-mode lua-mode package+ company-irony flycheck-irony irony helm-migemo auto-complete jedi-core company-jedi rjsx-mode codic helm-elscreen elscreen org-preview-html tern-auto-complete tern org-plus-contrib pangu-spacing migemo undo-tree prettier-js package-utils js-format js-auto-format-mode jedi helm exec-path-from-shell add-node-modules-path))
+   '(ddskk mew clang-format yasnippet web-mode visual-regexp-steroids package_list meghanada company-emacs-eclim prettier yaxception log4e json-mode company tide ts-comint typescript-mode lua-mode package+ company-irony flycheck-irony irony helm-migemo auto-complete jedi-core company-jedi rjsx-mode codic helm-elscreen elscreen org-preview-html tern-auto-complete tern org-plus-contrib pangu-spacing migemo undo-tree prettier-js package-utils js-format js-auto-format-mode jedi helm exec-path-from-shell add-node-modules-path))
  '(reb-re-syntax 'foreign-regexp))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -268,6 +271,7 @@
 (setq codic-api-token "O34o0PIozjDzqSLnuU31AxwOF8l1ERb7Lk")
 ;; codic をグローバル設定にする
 (global-set-key "\C-c\C-o" 'codic-translate)
+
 
 ;; React の jsx の設定
 (add-to-list 'auto-mode-alist '(".*\\.js\\'" . rjsx-mode))
@@ -330,9 +334,10 @@
 
 ;; c++ の formatter → sudo apt install clang-format and ~/.clang-format
 ;; auto-clang-format.el
-(require 'auto-clang-format)
-(add-hook 'c++-mode-hook 'auto-clang-format-mode)
-(add-hook 'c-mode-hook 'auto-clang-format-mode)
+
+;; (require 'auto-clang-format)
+;; (add-hook 'c++-mode-hook 'auto-clang-format-mode)
+;; (add-hook 'c-mode-hook 'auto-clang-format-mode)
 
 
 
@@ -394,7 +399,7 @@
 ;; aligns annotation to the right hand side
 (setq company-tooltip-align-annotations t)
 
-;; formats the buffer before saving
+;; ;; formats the buffer before saving
 (add-hook 'before-save-hook 'tide-format-before-save)
 (add-hook 'typescript-mode-hook #'setup-tide-mode)
 
@@ -449,5 +454,6 @@
 (global-set-key (kbd "C-M-r") 'vr/isearch-backward)
 (global-set-key (kbd "C-M-s") 'vr/isearch-forward)
 
-;; (require 'url-decode)
-;; (require 'test)
+;; (require 'stopwatch)
+(require 'fzf)
+(require 'el-timer)
