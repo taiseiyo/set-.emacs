@@ -1,16 +1,18 @@
 * requirement
 #+begin_src bash
 sudo apt install gnutils-cli autoconf libgccjit-10-dev libgccjit0
+#+end_src
 
-#+end_src 
 * install
 
 #+begin_src bash
-git clone git://git.savannah.gnu.org/emacs.git
-cd emacs
-./autogen.sh
-./configure --with-native-compilation --with-x-toolkit=no --with-xpm=ifavailable --with-jpeg=ifavailable --with-gif=ifavailable --with-tiff=ifavailable --with-gnutls=ifavailable
-make -j$(nproc)
-sudo make install
+  git clone git://git.savannah.gnu.org/emacs.git
+  # git clone https://github.com/emacs-mirror/emacs.git
+
+  cd emacs
+  ./autogen.sh
+  ./configure --with-native-compilation --with-x-toolkit=no --with-xpm=ifavailable --with-jpeg=ifavailable --with-gif=ifavailable --with-tiff=ifavailable --with-gnutls=ifavailable
+  make -j$(nproc)
+  sudo make install
 #+end_src 
 
