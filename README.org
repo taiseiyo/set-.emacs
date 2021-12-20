@@ -54,3 +54,5 @@ sudo apt install elpa-yasnippet-snippets
   - [[https://github.com/ananthakumaran/tide][tide github page]]
 - visual-regexp-steroids
   - regexp i-search の強化
+
+- [[https://github.com/bling/fzf.el][fzf]]
