@@ -3,7 +3,7 @@
 # skkdic-extra → 日本語の追加登録
 sudo apt install skkdic-extra
 
-package_list="helm jedi tern tern-auto-complete emmet-mode prettier-js undo-tree lua-mode codic rjsx-mode flycheck irony meghanada tide clang-format visual-regexp-steroids"
+package_list="helm jedi tern tern-auto-complete emmet-mode prettier-js undo-tree lua-mode codic rjsx-mode flycheck irony meghanada tide clang-format visual-regexp-steroids ddskk"
 
 emacsclient -e "(package-refresh-contents)"
 
