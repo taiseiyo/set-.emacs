@@ -1,6 +1,6 @@
 * requirement
 #+begin_src bash
-  sudo apt install gnutils-cli autoconf libgccjit-10-dev libgccjit0 texinfo libgtk2.0-dev
+  sudo apt install autoconf libgccjit-10-dev libgccjit0 texinfo libgtk2.0-dev gnutls-bin
 #+end_src
 
 * install
