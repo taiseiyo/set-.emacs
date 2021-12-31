@@ -17,3 +17,4 @@ done
 
 # sudo cp el-files/* /usr/share/emacs/27.1/site-lisp/	       
 sudo cp el-files/* /usr/local/share/emacs/29.0.50/site-lisp/
+cp el-files/init.el el-files/early-init.el ~/.emacs.d/

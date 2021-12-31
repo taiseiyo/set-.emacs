@@ -8,8 +8,8 @@
 ;; installed packages.  Don't delete this line.  If you don't want it,
 ;; just comment it out by adding a semicolon to the start of the line.
 ;; You may delete these explanatory comments.
-(setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
-(setq load-path(append '("~/.emacs.d/lisp/") load-path))
+
+;; (setq load-path(append '("~/.emacs.d/lisp/") load-path))
 
 
 (keyboard-translate ?\C-h ?\C-?)
@@ -244,7 +244,7 @@
  '(foreign-regexp/regexp-type 'python)
  '(package-archives '(("gnu" . "http://elpa.gnu.org/packages/")))
  '(package-selected-packages
-   '(ddskk mew clang-format yasnippet web-mode visual-regexp-steroids package_list meghanada company-emacs-eclim prettier yaxception log4e json-mode company tide ts-comint typescript-mode lua-mode package+ company-irony flycheck-irony irony helm-migemo auto-complete jedi-core company-jedi rjsx-mode codic helm-elscreen elscreen org-preview-html tern-auto-complete tern org-plus-contrib pangu-spacing migemo undo-tree prettier-js package-utils js-format js-auto-format-mode jedi helm exec-path-from-shell add-node-modules-path))
+   '(google-translate ddskk mew clang-format yasnippet web-mode visual-regexp-steroids package_list meghanada company-emacs-eclim prettier yaxception log4e json-mode company tide ts-comint typescript-mode lua-mode package+ company-irony flycheck-irony irony helm-migemo auto-complete jedi-core company-jedi rjsx-mode codic helm-elscreen elscreen org-preview-html tern-auto-complete tern org-plus-contrib pangu-spacing migemo undo-tree prettier-js package-utils js-format js-auto-format-mode jedi helm exec-path-from-shell add-node-modules-path))
  '(reb-re-syntax 'foreign-regexp))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -360,12 +360,12 @@
 (setq lookup-use-kakasi nil)
 
 ;; 色設定
-(set-face-background 'default "#172727")
-(set-face-foreground 'default "white")
+;; (set-face-background 'default "#172727")
+;; (set-face-foreground 'default "white")
 ;; メニューバーの非表示
-(menu-bar-mode -1)
+;; (menu-bar-mode -1)
 ;; ツールバーの非表示
-(tool-bar-mode -1)
+;; (tool-bar-mode -1)
 
 ;; yasnippet の設定
 (require 'yasnippet)
@@ -454,6 +454,11 @@
 (global-set-key (kbd "C-M-r") 'vr/isearch-backward)
 (global-set-key (kbd "C-M-s") 'vr/isearch-forward)
 
-;; (require 'stopwatch)
 (require 'fzf)
 (require 'el-timer)
+(require 'el-trans)
+
+(defun my-elisp-mode-setup ()
+  (local-set-key (kbd "TAB") 'helm-lisp-completion-at-point))
+(add-hook 'emacs-lisp-mode-hook 'my-elisp-mode-setup)
+
