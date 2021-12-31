@@ -1,5 +1,9 @@
 * package install 必要(list-packages から)
 - [[https://github.com/ryanoasis/nerd-fonts][nerd-fonts]]
+  #+BEGIN_SRC bash 
+  bash install Fira Code
+  #+END_SRC
+  
 - helm
  - helm-lib
 - jedi
