@@ -21,15 +21,13 @@
 
 ;; X11 specific
 (when (eq window-system 'x)
-  (scroll-bar-mode -1)
   ;; sudo apt install xfonts-terminus
-  ;; (set-frame-font "terminus-18")
-  
+  ;; (set-frame-font "terminus-18")  
+  ;; face
   ;; FiraCode の Nerd Font(github より入手)に変更
   (when (member "FiraCode Nerd Font" (font-family-list))
     (set-frame-font "FiraCode Nerd Font-18" t t))
-  
-  ;; face
+
   (dolist (elem '((bold "LightGoldenrod")
 		  (underline "PaleGreen")
 		  (mode-line "black" "PaleGreen3" bold)
@@ -108,8 +106,6 @@
 
 ;;utf-8 の設定
 (prefer-coding-system 'utf-8)
-;; (setq coding-system-for-write 'utf-8)
-;; (put 'upcase-region 'disabled nil)
 
 ;;undo-tree の設定
 (when (require 'undo-tree nil t)
