@@ -25,8 +25,8 @@
   ;; (set-frame-font "terminus-18")  
   ;; face
   ;; FiraCode の Nerd Font(github より入手)に変更
-  (when (member "FiraCode Nerd Font" (font-family-list))
-    (set-frame-font "FiraCode Nerd Font-18" t t))
+  ;; (when (member "FiraCode Nerd Font" (font-family-list))
+  ;;   (set-frame-font "FiraCode Nerd Font-18" t t))
 
   (dolist (elem '((bold "LightGoldenrod")
 		  (underline "PaleGreen")
