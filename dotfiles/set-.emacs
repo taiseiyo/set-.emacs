@@ -222,6 +222,7 @@
 (add-hook 'web-mode-hook #'(lambda ()
                             (enable-minor-mode
                              '("\\.jsx?\\'" . prettier-js-mode))))
+
 (setq prettier-js-args '(
   "--trailing-comma" "all"
   "--bracket-spacing" "false"
@@ -240,7 +241,7 @@
  '(foreign-regexp/regexp-type 'python)
  '(package-archives '(("gnu" . "http://elpa.gnu.org/packages/")))
  '(package-selected-packages
-   '(google-translate ddskk mew clang-format yasnippet web-mode visual-regexp-steroids package_list meghanada company-emacs-eclim prettier yaxception log4e json-mode company tide ts-comint typescript-mode lua-mode package+ company-irony flycheck-irony irony helm-migemo auto-complete jedi-core company-jedi rjsx-mode codic helm-elscreen elscreen org-preview-html tern-auto-complete tern org-plus-contrib pangu-spacing migemo undo-tree prettier-js package-utils js-format js-auto-format-mode jedi helm exec-path-from-shell add-node-modules-path))
+   '(flycheck-mypy google-translate ddskk mew clang-format yasnippet web-mode visual-regexp-steroids package_list meghanada company-emacs-eclim prettier yaxception log4e json-mode company tide ts-comint typescript-mode lua-mode package+ company-irony flycheck-irony irony helm-migemo auto-complete jedi-core company-jedi rjsx-mode codic helm-elscreen elscreen org-preview-html tern-auto-complete tern org-plus-contrib pangu-spacing migemo undo-tree prettier-js package-utils js-format js-auto-format-mode jedi helm exec-path-from-shell add-node-modules-path))
  '(reb-re-syntax 'foreign-regexp))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -271,6 +272,7 @@
 
 ;; React の jsx の設定
 (add-to-list 'auto-mode-alist '(".*\\.js\\'" . rjsx-mode))
+
 ;; package-install -> tern and tern-auto-complete
 ;; javascript プログラムの関数自動補完設定
 (add-hook 'js2-mode-hook (lambda () (tern-mode t)))
@@ -322,7 +324,6 @@
 (require 'irony)
 (add-hook 'c++-mode-hook 'irony-mode)
 (add-hook 'c++-mode-hook 'flycheck-mode)
-
 (add-hook 'c-mode-hook 'irony-mode)
 (add-hook 'objc-mode-hook 'irony-mode)
 (add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options)
@@ -330,7 +331,6 @@
 
 ;; c++ の formatter → sudo apt install clang-format and ~/.clang-format
 ;; auto-clang-format.el
-
 ;; (require 'auto-clang-format)
 ;; (add-hook 'c++-mode-hook 'auto-clang-format-mode)
 ;; (add-hook 'c-mode-hook 'auto-clang-format-mode)
@@ -355,13 +355,6 @@
       '((:stemmer .  stem-english)))
 (setq lookup-use-kakasi nil)
 
-;; 色設定
-;; (set-face-background 'default "#172727")
-;; (set-face-foreground 'default "white")
-;; メニューバーの非表示
-;; (menu-bar-mode -1)
-;; ツールバーの非表示
-;; (tool-bar-mode -1)
 
 ;; yasnippet の設定
 (require 'yasnippet)
@@ -391,21 +384,25 @@
   ;; company is an optional dependency. You have to
   ;; install it separately via package-install
   ;; `M-x package-install [ret] company`
-  (company-mode +1))
+  (company-mode +1)
+  (emmet-mode))
+
 ;; aligns annotation to the right hand side
 (setq company-tooltip-align-annotations t)
 
-;; ;; formats the buffer before saving
+;; formats the buffer before saving
 (add-hook 'before-save-hook 'tide-format-before-save)
 (add-hook 'typescript-mode-hook #'setup-tide-mode)
 
 ;; react typescript
 (require 'web-mode)
+
 (add-to-list 'auto-mode-alist '("\\.tsx\\'" . web-mode))
 (add-hook 'web-mode-hook
           (lambda ()
             (when (string-equal "tsx" (file-name-extension buffer-file-name))
               (setup-tide-mode))))
+
 ;; enable typescript-tslint checker
 (flycheck-add-mode 'typescript-tslint 'web-mode)
 
@@ -453,8 +450,7 @@
 (require 'fzf)
 (require 'el-timer)
 (require 'el-trans)
-
+(require 'voice)
 (defun my-elisp-mode-setup ()
-  (local-set-key (kbd "TAB") 'helm-lisp-completion-at-point))
+  (local-set-key (kbd "C-j") 'helm-lisp-completion-at-point))
 (add-hook 'emacs-lisp-mode-hook 'my-elisp-mode-setup)
-
