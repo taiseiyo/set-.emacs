@@ -450,7 +450,7 @@
 (require 'fzf)
 (require 'el-timer)
 (require 'el-trans)
-(require 'voice)
+;; (require 'voice)
 (defun my-elisp-mode-setup ()
   (local-set-key (kbd "C-j") 'helm-lisp-completion-at-point))
 (add-hook 'emacs-lisp-mode-hook 'my-elisp-mode-setup)
