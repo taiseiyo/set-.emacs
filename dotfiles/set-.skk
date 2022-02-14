@@ -3,7 +3,13 @@
 ;; sudo apt install skkdic-extra
 (setq skk-extra-jisyo-file-list(list '("/usr/share/skk/SKK-JISYO.JIS3_4" . euc-jisx0213) "/usr/share/skk/SKK-JISYO.zipcode"))
 
+;; wsl の場合
+;; (setq skk-large-jisyo "/usr/share/skk/SKK-JISYO.L")
+
+;; 辞書の追加
+;; (add-to-list 'skk-extra-jisyo-file-list '("/usr/share/skk/SKK-JISYO.edict") . euc-jusx0213)
+
 ;; 日本語の候補の動的な補完
-(setq skk-dcomp-multiple-activate t
-      skk-dcomp-multiple-rows 10)
+;; (setq skk-dcomp-multiple-activate t
+;;      skk-dcomp-multiple-rows 10)
       
