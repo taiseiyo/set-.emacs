@@ -9,6 +9,7 @@ def arg_parse():
                         help='files to read, if empty, stdin is used')
     parser.add_argument('-r', '--rho', default=0.1,
                         type=float, help='rho of epsilon')
-    parser.add_argument('-v', '--visit', default=5,
-                        type=int, help='rho of epsilon')
+    parser.add_argument('-c', '--command', action="store_true",
+    			help='implement as a command')
+
     return parser.parse_args()
