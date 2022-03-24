@@ -1,11 +1,10 @@
 # -*- mode: snippet -*-
-# name: getopts
-# key: getopts
+# name: getopts_args
+# key: getopts_args
 # --
 while getopts l:a: OPT
 do
     case $OPT in
-    	# OPTARG は引数の値
         "l" ) echo "$OPTARG";;
         "a" ) echo "$OPTARG";;
     esac

@@ -61,8 +61,6 @@
 
 ;;()を対応させる設定
 (electric-pair-mode 1)
-;;~/.emacs.d/init.el を読み込む設定
-(load (expand-file-name (concat (getenv "HOME") "/.emacs.d/init")))
 
 ;;auto-complete を読み込む設定
 (require 'auto-complete)
@@ -240,7 +238,7 @@
  '(foreign-regexp/regexp-type 'python)
  '(package-archives '(("gnu" . "http://elpa.gnu.org/packages/")))
  '(package-selected-packages
-   '(google-translate ddskk mew clang-format yasnippet web-mode visual-regexp-steroids package_list meghanada company-emacs-eclim prettier yaxception log4e json-mode company tide ts-comint typescript-mode lua-mode package+ company-irony flycheck-irony irony helm-migemo auto-complete jedi-core company-jedi rjsx-mode codic helm-elscreen elscreen org-preview-html tern-auto-complete tern org-plus-contrib pangu-spacing migemo undo-tree prettier-js package-utils js-format js-auto-format-mode jedi helm exec-path-from-shell add-node-modules-path))
+   '(tree-sitter-langs tree-sitter google-translate ddskk mew clang-format yasnippet web-mode visual-regexp-steroids package_list meghanada company-emacs-eclim prettier yaxception log4e json-mode company tide ts-comint typescript-mode lua-mode package+ company-irony flycheck-irony irony helm-migemo auto-complete jedi-core company-jedi rjsx-mode codic helm-elscreen elscreen org-preview-html tern-auto-complete tern org-plus-contrib pangu-spacing migemo undo-tree prettier-js package-utils js-format js-auto-format-mode jedi helm exec-path-from-shell add-node-modules-path))
  '(reb-re-syntax 'foreign-regexp))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -379,6 +377,9 @@
 (yas-global-mode 1)
 
 
+;;~/.emacs.d/init.el を読み込む設定
+(load (expand-file-name (concat (getenv "HOME") "/.emacs.d/init")))
+
 ;; typescript の設定：補完系, フォーマット系
 (require 'tide)
 (defun setup-tide-mode ()
@@ -459,3 +460,6 @@
 
 (add-hook 'emacs-lisp-mode-hook 'my-elisp-mode-setup)
 
+(require 'tree-sitter)
+(require 'tree-sitter-langs)
+(global-tree-sitter-mode)

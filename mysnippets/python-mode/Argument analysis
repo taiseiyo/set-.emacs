@@ -11,5 +11,4 @@ def arg_parse():
                         type=float, help='rho of epsilon')
     parser.add_argument('-c', '--command', action="store_true",
     			help='implement as a command')
-
     return parser.parse_args()
