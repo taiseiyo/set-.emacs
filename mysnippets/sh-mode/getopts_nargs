@@ -1,11 +1,12 @@
 # -*- mode: snippet -*-
-# name: getopts_args
-# key: getopts_args
+# name: getopts_nargs
+# key: getopts_nargs
 # --
-while getopts l:a: OPT
+while getopts abc OPT
 do
-    case $OPT in
-        "l" ) echo "$OPTARG";;
-        "a" ) echo "$OPTARG";;
-    esac
+  case $OPT in
+     a) echo "[-a] が指定された";;
+     b) echo "[-b] が指定された";;
+     *) echo "該当なし（OPT=$OPT）";;
+  esac
 done
