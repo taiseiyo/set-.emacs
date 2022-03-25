@@ -1,0 +1,20 @@
+(undo-tree-save-format-version . 1)
+"3a19b915c9c4d24df27e4147bcaa7ebed21f29b9"
+[nil nil nil nil (25149 52361 287224 630000) 0 nil]
+([nil nil ((77 . 85) (t 25149 52079 53838 38000)) nil (25149 52361 287220 655000) 0 nil])
+([nil nil ((85 . 86) (t 25149 52361 355494 579000)) nil (25149 52405 770869 293000) 0 nil])
+([nil nil ((#("b" 0 1 (fontified t)) . -85) (undo-tree-id1 . -1) 86) nil (25149 52405 770868 55000) 0 nil])
+([nil nil ((85 . 89)) nil (25149 52405 770865 461000) 0 nil])
+([nil nil ((#("g" 0 1 (fontified t)) . -88) (undo-tree-id0 . -1) 89) nil (25149 52405 770864 128000) 0 nil])
+([nil nil ((88 . 89)) nil (25149 52405 770840 520000) 0 nil])
+([nil nil ((493 . 496) (t 25149 52405 774501 62000)) nil (25149 52526 394431 697000) 0 nil])
+([nil nil ((#("s" 0 1 (fontified t)) . -493) (undo-tree-id6 . -1) (#("d" 0 1 (fontified t)) . -494) (undo-tree-id7 . -1) (#("o" 0 1 (fontified t)) . -495) (undo-tree-id8 . -1) 496) nil (25149 52526 394430 398000) 0 nil])
+([nil nil ((493 . 496)) nil (25149 52526 394424 559000) 0 nil])
+([nil nil ((#("r" 0 1 (fontified t)) . -495) (undo-tree-id5 . -1) 496) nil (25149 52526 394423 743000) 0 nil])
+([nil nil ((495 . 498)) nil (25149 52526 394422 120000) 0 nil])
+([nil nil ((493 . 500) (#("dotfi" 0 5 (fontified t)) . -493) (undo-tree-id3 . -5) (undo-tree-id4 . 5) 498) nil (25149 52526 394421 381000) 0 nil])
+([nil nil ((500 . 502) (#("`" 0 1 (fontified nil)) . -500) (500 . 501)) nil (25149 52526 394418 613000) 0 nil])
+([nil nil ((#("`" 0 1 (fontified nil face sh-quoted-exec)) . -500) (undo-tree-id2 . -1) (#("`" 0 1 (fontified t face sh-quoted-exec)) . 501)) nil (25149 52526 394416 762000) 0 nil])
+([nil nil ((500 . 502)) nil (25149 52526 394401 978000) 0 nil])
+([nil current ((#("# sudo cp el-files/* /usr/share/emacs/27.1/site-lisp/	       " 0 2 (fontified t face font-lock-comment-delimiter-face) 2 61 (fontified t face font-lock-comment-face)) . 524) (undo-tree-id9 . -61) (t 25149 52526 395807 802000)) nil (25149 52536 912685 503000) 0 nil])
+nil
