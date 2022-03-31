@@ -93,6 +93,12 @@
 ;; 一部漢字が変に表示されるのを戻す
 (set-language-environment "Japanese")
 
+;; backup file を作らない
+(setq make-backup-files nil)
+
+;;; .#* とかのバックアップファイルを作らない
+(setq auto-save-default nil)
+
 ;; C-c C-e l o でコンパイルした pdf ファイルを開くコマンドを設定する
 ;; ↓ だと mupdf で開く
 (eval-after-load "org"
