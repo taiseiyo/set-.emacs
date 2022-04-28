@@ -48,7 +48,7 @@
 sudo apt install clang-format and ~/.clang-format
 #+end_src
 - irony
-  - sudo apt install clang libclang-11-dev
+  - sudo apt install clang libclang-*version*-dev
   - M-x irony-install-server
 - yasnippet
 #+begin_src bash
