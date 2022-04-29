@@ -43,13 +43,15 @@
 - [[https://github.com/skk-dev/ddskk/blob/master/etc/dot.skk][skkの設定例]]
 - flycheck → list-packages からインストール
 - clang-format
-
 #+begin_src bash
-sudo apt install clang-format and ~/.clang-format
+  sudo apt install clang-format 
+  clang-format --style=google -dump-config > ~/.clang-format
 #+end_src
+
 - irony
   - sudo apt install clang libclang-*version*-dev
   - M-x irony-install-server
+  - [[http://www.cachestocaches.com/2015/8/c-completion-emacs/][URL]]
 - yasnippet
 #+begin_src bash
 sudo apt install elpa-yasnippet-snippets
