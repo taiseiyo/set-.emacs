@@ -5,7 +5,7 @@ sudo apt install skkdic-extra cmigemo fzf clang-format
 
 clang-format --style=google -dump-config > ~/.clang-format
 
-package_list="helm jedi tern tern-auto-complete emmet-mode prettier-js undo-tree lua-mode codic rjsx-mode flycheck irony meghanada tide clang-format visual-regexp-steroids ddskk use-package company-irony"
+package_list="helm jedi tern tern-auto-complete emmet-mode prettier-js undo-tree lua-mode codic rjsx-mode flycheck irony meghanada tide clang-format visual-regexp-steroids ddskk use-package company-irony yafolding"
 
 emacsclient -e "(package-refresh-contents)"
 
