@@ -244,7 +244,7 @@
  '(foreign-regexp/regexp-type 'python)
  '(package-archives '(("gnu" . "http://elpa.gnu.org/packages/")))
  '(package-selected-packages
-   '(tree-sitter-langs tree-sitter google-translate ddskk mew clang-format yasnippet web-mode visual-regexp-steroids package_list meghanada company-emacs-eclim prettier yaxception log4e json-mode company tide ts-comint typescript-mode lua-mode package+ company-irony flycheck-irony irony helm-migemo auto-complete jedi-core company-jedi rjsx-mode codic helm-elscreen elscreen org-preview-html tern-auto-complete tern org-plus-contrib pangu-spacing migemo undo-tree prettier-js package-utils js-format js-auto-format-mode jedi helm exec-path-from-shell add-node-modules-path))
+   '(yafolding origami tree-sitter-langs tree-sitter google-translate ddskk mew clang-format yasnippet web-mode visual-regexp-steroids package_list meghanada company-emacs-eclim prettier yaxception log4e json-mode company tide ts-comint typescript-mode lua-mode package+ company-irony flycheck-irony irony helm-migemo auto-complete jedi-core company-jedi rjsx-mode codic helm-elscreen elscreen org-preview-html tern-auto-complete tern org-plus-contrib pangu-spacing migemo undo-tree prettier-js package-utils js-format js-auto-format-mode jedi helm exec-path-from-shell add-node-modules-path))
  '(reb-re-syntax 'foreign-regexp))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -324,9 +324,9 @@
 ;; c++ の formatter → sudo apt install clang-format and ~/.clang-format
 ;; auto-clang-format.el
 
-;; (require 'auto-clang-format)
-;; (add-hook 'c++-mode-hook 'auto-clang-format-mode)
-;; (add-hook 'c-mode-hook 'auto-clang-format-mode)
+(require 'auto-clang-format)
+(add-hook 'c++-mode-hook 'auto-clang-format-mode)
+(add-hook 'c-mode-hook 'auto-clang-format-mode)
 
 
 
@@ -446,9 +446,9 @@
 (global-set-key (kbd "C-M-r") 'vr/isearch-backward)
 (global-set-key (kbd "C-M-s") 'vr/isearch-forward)
 
-(require 'fzf)
-(require 'el-timer)
-(require 'el-trans)
+;; (require 'fzf)
+;; (require 'el-timer)
+;; (require 'el-trans)
 
 (defun my-elisp-mode-setup ()
   (local-set-key (kbd "C-c C-c") 'helm-lisp-completion-at-point))
@@ -495,3 +495,5 @@
 	)
   :bind ("C-;" . company-complete-common)
   )
+
+(add-hook 'prog-mode-hook 'yafolding-mode)
