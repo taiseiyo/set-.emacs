@@ -244,7 +244,7 @@
  '(foreign-regexp/regexp-type 'python)
  '(package-archives '(("gnu" . "http://elpa.gnu.org/packages/")))
  '(package-selected-packages
-   '(yafolding origami tree-sitter-langs tree-sitter google-translate ddskk mew clang-format yasnippet web-mode visual-regexp-steroids package_list meghanada company-emacs-eclim prettier yaxception log4e json-mode company tide ts-comint typescript-mode lua-mode package+ company-irony flycheck-irony irony helm-migemo auto-complete jedi-core company-jedi rjsx-mode codic helm-elscreen elscreen org-preview-html tern-auto-complete tern org-plus-contrib pangu-spacing migemo undo-tree prettier-js package-utils js-format js-auto-format-mode jedi helm exec-path-from-shell add-node-modules-path))
+   '(tramp yafolding origami tree-sitter-langs tree-sitter google-translate ddskk mew clang-format yasnippet web-mode visual-regexp-steroids package_list meghanada company-emacs-eclim prettier yaxception log4e json-mode company tide ts-comint typescript-mode lua-mode package+ company-irony flycheck-irony irony helm-migemo auto-complete jedi-core company-jedi rjsx-mode codic helm-elscreen elscreen org-preview-html tern-auto-complete tern org-plus-contrib pangu-spacing migemo undo-tree prettier-js package-utils js-format js-auto-format-mode jedi helm exec-path-from-shell add-node-modules-path))
  '(reb-re-syntax 'foreign-regexp))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -497,3 +497,4 @@
   )
 
 (add-hook 'prog-mode-hook 'yafolding-mode)
+;; C-RET 現在位置以下を隠す・見せる
